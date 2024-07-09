@@ -17,6 +17,11 @@ body {
     padding: 30px;
 }
 
+header {
+    border-bottom: 1px solid #f9f7fe;
+    padding: 0 0 30px 0;
+}
+
 .search-form-input {
     background-color: rgb(247, 251, 253);
     border: none;
@@ -24,13 +29,20 @@ body {
     width: 80%;
     font-size: 16px;
     padding: 15px 20px;
-    margin: 20px 5px;
+    margin: 18px 5px 0 0;
 }
 
 .search-form-button {
-    background-color: rgb(178, 221, 248);
+    background-color: rgb(146, 211, 251);
     border-radius: 10px;
     border: none;
     font-size: 16px;
     padding: 13px 26px;
+}
+
+footer {
+    border-top: 1px solid #f9f7fe;
+    padding: 30px 0 0 0;
+    text-align: center;
+    font-size: 12px;
 }
