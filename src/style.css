@@ -2,13 +2,13 @@ body {
     background: rgb(233, 247, 255);
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Nunito", sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: weight;
     font-style: normal;
 }
 
-.app {
+.main-container {
     background: white;
     max-width: 600px;
     margin: 45px auto;
