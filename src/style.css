@@ -64,7 +64,7 @@ main {
 
 .weather-app-details {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1;
     color: rgba(39, 33, 66, 0.6);
     font-size: 16px;
 }
@@ -74,18 +74,20 @@ main {
     font-weight: 600;
 }
 
-.weather-app-emoji {
-    font-size: 44px;
-}
-
 .weather-app-unit {
     font-size: 28px;
     font-weight: 600;
+    line-height: 1;
 }
 
 .data {
     font-weight: bold;
     color: rgb(0, 179, 249);
+}
+
+.emoji {
+    width: 88px;
+    height: 88px;
 }
 
 footer {
