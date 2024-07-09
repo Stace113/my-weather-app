@@ -10,17 +10,18 @@
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
             rel="stylesheet"
         />
-        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
         <title>Weather App</title>
     </head>
     <body>
-        <div class="main-container">
+        <div class="main-container" id="search-form">
             <header>
                 <form class="search-form">
                     <input
                         type="search"
-                        placeholder="Enter a city..."
+                        placeholder="Enter a City..."
                         required
+                        id="search-form-input"
                         class="search-form-input"
                     />
                     <input
@@ -33,7 +34,7 @@
             <main>
                 <div class="weather-app-data">
                     <div>
-                        <h1 class="weather-app-city">Bristol</h1>
+                        <h1 class="weather-app-city" id="city">Bristol</h1>
                         <p class="weather-app-details">
                             Tuesday 13:41, Light Showers
                             <br />
@@ -43,7 +44,7 @@
                     </div>
                     <div>
                         <span class="weather-app-emoji">🌧️</span
-                        ><span class="weather-app-temp">15</span>
+                        ><span class="weather-app-temp" id="temp">15</span>
                         <span class="weather-app-unit">ºC</span>
                     </div>
                 </div>
@@ -66,5 +67,6 @@
                 >
             </footer>
         </div>
+        <script src="src/index.js"></script>
     </body>
 </html>
