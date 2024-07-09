@@ -69,10 +69,6 @@ main {
     font-size: 16px;
 }
 
-.weather-app-details strong {
-    color: rgb(0, 179, 249);
-}
-
 .weather-app-temp {
     font-size: 88px;
     font-weight: 600;
@@ -85,6 +81,11 @@ main {
 .weather-app-unit {
     font-size: 28px;
     font-weight: 600;
+}
+
+.data {
+    font-weight: bold;
+    color: rgb(0, 179, 249);
 }
 
 footer {

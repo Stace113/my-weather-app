@@ -34,17 +34,22 @@
             <main>
                 <div class="weather-app-data">
                     <div>
-                        <h1 class="weather-app-city" id="city">Bristol</h1>
+                        <h1 class="weather-app-city" id="city"></h1>
                         <p class="weather-app-details">
-                            Tuesday 13:41, Light Showers
+                            <span id="time"></span>,
+                            <span id="description"></span>
                             <br />
-                            Humidity: <strong>78%</strong>, Wind:
-                            <strong>1.53km/h</strong>
+                            Humidity:
+                            <span class="data" id="humidity"></span
+                            ><span class="data">%</span>
+                            Wind:
+                            <span class="data" id="wind"></span
+                            ><span class="data">km/h</span>
                         </p>
                     </div>
                     <div>
-                        <span class="weather-app-emoji">🌧️</span
-                        ><span class="weather-app-temp" id="temp">15</span>
+                        <span class="weather-app-emoji" id="emoji">🌧️</span
+                        ><span class="weather-app-temp" id="temp"></span>
                         <span class="weather-app-unit">ºC</span>
                     </div>
                 </div>
