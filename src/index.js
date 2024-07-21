@@ -16,6 +16,8 @@ function refreshWeather(response) {
     windElement.innerHTML = response.data.wind.speed;
     timeElement.innerHTML = formatDate(date);
     emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="emoji"`;
+
+    getForcast(response.data.city);
 }
 
 function formatDate(date) {
@@ -41,7 +43,7 @@ function formatDate(date) {
 
 function searchCity(city) {
     let apiKey = "3444d6bo8280055eta76fe9ea41a4f47";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(refreshWeather);
 }
 
@@ -52,7 +54,15 @@ function handleSearchSubmit(event) {
     searchCity(searchInput.value);
 }
 
-function displayForcast() {
+function getForcast(city) {
+    let apiKey = "3444d6bo8280055eta76fe9ea41a4f47";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiUrl).then(displayForcast);
+}
+
+function displayForcast(response) {
+    console.log(response.data);
+
     let forcastElement = document.querySelector("#forcast");
 
     let days = [`Tues`, `Weds`, `Thurs`, `Fri`, `Sat`];
@@ -81,4 +91,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Bristol");
-displayForcast();
