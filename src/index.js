@@ -15,7 +15,7 @@ function refreshWeather(response) {
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = response.data.wind.speed;
     timeElement.innerHTML = formatDate(date);
-    emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="emoji"`;
+    emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="emoji" />`;
 
     getForcast(response.data.city);
 }
@@ -84,7 +84,7 @@ function displayForcast(response) {
                             day.time
                         )}</div>
                         <div class="weather-forcast-emoji">
-                          <img src=${day.condition.icon_url}" />
+                          <img src="${day.condition.icon_url}" />
                         </div>
                         <div class="weather-forcast-temps">
                             <div class="weather-forcast-temp">
@@ -105,5 +105,3 @@ function displayForcast(response) {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
-
-searchCity("Bristol");
