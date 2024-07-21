@@ -52,5 +52,33 @@ function handleSearchSubmit(event) {
     searchCity(searchInput.value);
 }
 
+function displayForcast() {
+    let forcastElement = document.querySelector("#forcast");
+
+    let days = [`Tues`, `Weds`, `Thurs`, `Fri`, `Sat`];
+    let forcastHtml = "";
+
+    days.forEach(function (day) {
+        forcastHtml =
+            forcastHtml +
+            `
+     <div class="weather-forcast-day">
+                        <div class="weather-forcast-date">${day}</div>
+                        <div class="weather-forcast-emoji">🌧️</div>
+                        <div class="weather-forcast-temps">
+                            <div class="weather-forcast-temp">
+                                <strong>15º </strong>
+                            </div>
+                            <div class="weather-forcast-temp">9º</div>
+                        </div>
+                    </div>`;
+    });
+
+    forcastElement.innerHTML = forcastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Bristol");
+displayForcast();
