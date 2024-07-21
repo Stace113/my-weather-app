@@ -9,7 +9,7 @@ body {
 }
 
 a {
-    color: rgb(125, 201, 249);
+    color: rgba(119, 197, 245, 0.741);
     font-weight: 700;
 }
 
@@ -98,6 +98,12 @@ footer {
     color: rgba(0, 0, 0, 0.6);
 }
 
+.weather-app-forcast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
 .weather-forcast-date {
     text-align: center;
     color: rgba(0, 0, 0, 0.437);
@@ -112,5 +118,11 @@ footer {
 }
 
 .weather-forcast-temps {
-    text-align: center;
+    justify-content: center;
+    color: rgb(0, 179, 249);
+    display: flex;
+}
+
+.weather-forcast-temp {
+    padding: 0 5px;
 }
