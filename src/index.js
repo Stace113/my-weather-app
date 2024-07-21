@@ -60,28 +60,44 @@ function getForcast(city) {
     axios(apiUrl).then(displayForcast);
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"];
+
+    return days[date.getDay()];
+}
+
 function displayForcast(response) {
     console.log(response.data);
 
     let forcastElement = document.querySelector("#forcast");
 
-    let days = [`Tues`, `Weds`, `Thurs`, `Fri`, `Sat`];
     let forcastHtml = "";
 
-    days.forEach(function (day) {
-        forcastHtml =
-            forcastHtml +
-            `
+    response.data.daily.forEach(function (day, index) {
+        if (index < 5) {
+            forcastHtml =
+                forcastHtml +
+                `
      <div class="weather-forcast-day">
-                        <div class="weather-forcast-date">${day}</div>
-                        <div class="weather-forcast-emoji">🌧️</div>
+                        <div class="weather-forcast-date">${formatDay(
+                            day.time
+                        )}</div>
+                        <div class="weather-forcast-emoji">
+                          <img src=${day.condition.icon_url}" />
+                        </div>
                         <div class="weather-forcast-temps">
                             <div class="weather-forcast-temp">
-                                <strong>15º </strong>
+                                <strong>${Math.round(
+                                    day.temperature.maximum
+                                )}º </strong>
                             </div>
-                            <div class="weather-forcast-temp">9º</div>
+                            <div class="weather-forcast-temp">${Math.round(
+                                day.temperature.minimum
+                            )}º</div>
                         </div>
                     </div>`;
+        }
     });
 
     forcastElement.innerHTML = forcastHtml;

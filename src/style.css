@@ -121,6 +121,7 @@ footer {
     justify-content: center;
     color: rgb(0, 179, 249);
     display: flex;
+    margin-bottom: 20px;
 }
 
 .weather-forcast-temp {
